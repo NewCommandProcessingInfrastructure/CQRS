@@ -16,6 +16,7 @@ public class App {
 //			System.out.format("%s: %s" + "  has bowed to me!%n", this.name, bower.getName());
 			log.info("{}:{} has bowed to me!", this.name, bower.getName());
 			bower.bowBack(this);
+//			bower.bow(bower);
 		}
 
 		public synchronized void bowBack(Friend bower) {
