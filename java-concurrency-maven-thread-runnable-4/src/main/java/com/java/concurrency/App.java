@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class App {
-
 	// Display a message, preceded by
 	// the name of the current thread
 	static void threadMessage(String message) {
@@ -18,13 +17,6 @@ public class App {
 			String importantInfo[] = { "Mares eat oats", "Does eat oats", "Little lambs eat ivy",
 					"A kid will eat ivy too" };
 			try {
-//				for (int i = 0; i < importantInfo.length; i++) {
-//					// Pause for 4 seconds
-//					Thread.sleep(4000);
-//					// Print a message
-//					threadMessage(importantInfo[i]);
-//				}
-				
 				for(String element : importantInfo) {
 					Thread.sleep(4000);
 					threadMessage(element);
