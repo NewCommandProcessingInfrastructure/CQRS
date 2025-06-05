@@ -3,11 +3,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>java-concurrency-maven-executor-service-2</groupId>
-  <artifactId>java-concurrency-maven-executor-service-2</artifactId>
+  <groupId>java-concurrency-maven-thread-runnable-4</groupId>
+  <artifactId>java-concurrency-maven-thread-runnable-4</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>java-concurrency-maven-executor-service-2</name>
+  <name>java-concurrency-maven-thread-runnable-4</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -41,7 +41,7 @@
       <scope>test</scope>
     </dependency>
     
-    <dependency>
+     <dependency>
 	    <groupId>org.slf4j</groupId>
 	    <artifactId>slf4j-api</artifactId>
 	    <version>2.0.12</version> <!-- or latest -->
@@ -58,7 +58,6 @@
 	    <version>1.18.32</version> <!-- or latest -->
 	    <scope>provided</scope>
 	</dependency>
-    
   </dependencies>
 
   <build>
