@@ -21,7 +21,6 @@ public class App {
 					Thread.sleep(4000);
 					threadMessage(element);
 				}
-				
 			} catch (InterruptedException e) {
 				threadMessage("I wasn't done!");
 			}
