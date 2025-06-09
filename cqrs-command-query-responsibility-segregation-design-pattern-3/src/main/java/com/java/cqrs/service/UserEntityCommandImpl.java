@@ -5,6 +5,7 @@ import com.java.cqrs.entity.UserEntity;
 import com.java.cqrs.model.UpdateFirstName;
 import com.java.cqrs.model.UserRecord;
 import com.java.cqrs.repository.UserEntityRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -14,6 +15,7 @@ public class UserEntityCommandImpl implements UserEntityCommand {
 	private final UserEntityRepository userEntityRepository;
 
 	@Override
+	@Transactional
 	public void handle(UpdateFirstName updateFirstName) {
 		UserEntity user = userEntityRepository.findById(updateFirstName.id())
 				.orElseThrow(() -> new RuntimeException("UserName Not Found!"));
@@ -23,6 +25,7 @@ public class UserEntityCommandImpl implements UserEntityCommand {
 	}
 	
 	@Override
+	@Transactional
 	public void addUserRecord(UserRecord userRecord) {
 		UserEntity user = UserEntity.builder()
 				.firstName(userRecord.firstName())
