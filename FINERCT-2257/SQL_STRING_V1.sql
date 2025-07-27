@@ -59,10 +59,10 @@ SELECT * FROM m_loan;
 
 SELECT * FROM m_portfolio_account_associations;
 
-SELECT * FROM m_guarantor WHERE id = 24;
-SELECT * FROM m_guarantor_funding_details WHERE guarantor_id = 24;
+SELECT * FROM m_guarantor WHERE id = 48;
+SELECT * FROM m_guarantor_funding_details WHERE guarantor_id = 48;
 SELECT * FROM m_guarantor_transaction WHERE guarantor_fund_detail_id IN (
-    SELECT id FROM m_guarantor_funding_details WHERE guarantor_id = 24
+    SELECT id FROM m_guarantor_funding_details WHERE guarantor_id = 48
 );
 
 SELECT `id`, 
@@ -96,7 +96,7 @@ SELECT `id`,
 `account_associations_id`, 
 `guarantor_id` 
 FROM `m_guarantor_funding_details` 
-WHERE (`guarantor_id` = 24);
+WHERE (`guarantor_id` = 25);
 
 SELECT * FROM m_client;
 
@@ -121,4 +121,14 @@ SELECT
 FROM m_guarantor g
 INNER JOIN m_guarantor_funding_details gfd ON g.id = gfd.guarantor_id
 INNER JOIN m_guarantor_transaction gft ON gfd.id = gft.guarantor_fund_detail_id
-WHERE g.id = 24;
+WHERE g.id = 25;
+
+SELECT * FROM m_client;
+SELECT * FROM m_client_transfer_details;
+SELECT * FROM m_savings_account;
+
+SELECT * FROM m_product_loan;
+
+SELECT * FROM m_product_loan_guarantee_details;
+
+SELECT * FROM m_product_loan_charge;
