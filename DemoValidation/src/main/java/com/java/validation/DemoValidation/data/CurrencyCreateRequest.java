@@ -1,5 +1,6 @@
 package com.java.validation.DemoValidation.data;
 
+import com.java.validation.DemoValidation.annotation.CurrencyCodeMatches;
 import jakarta.validation.constraints.*;
 import java.io.Serial;
 import java.io.Serializable;
@@ -10,6 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@CurrencyCodeMatches
 public class CurrencyCreateRequest implements Serializable {
 
   @Serial
