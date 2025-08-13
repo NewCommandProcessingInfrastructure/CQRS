@@ -1,0 +1,1 @@
+rootProject.name = "gradle_build_system_with_multi_module"
