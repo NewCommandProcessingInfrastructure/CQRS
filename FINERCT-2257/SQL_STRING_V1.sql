@@ -51,18 +51,22 @@ SELECT * FROM m_portfolio_account_associations;
 
 SELECT * FROM m_code_value;
 
+SELECT * FROM m_client;
+
 SELECT * FROM m_guarantor;
 SELECT * FROM m_guarantor_funding_details;
 SELECT * FROM m_guarantor_transaction;
 
 SELECT * FROM m_loan;
-
+SELECT * FROM m_loan WHERE id=4236;
+SELECT * FROM m_loan_transaction;
+SELECT * FROM m_loan WHERE external_id="e001aa31-5d8f-4b2e-892a-87add0abf348";
 SELECT * FROM m_portfolio_account_associations;
 
-SELECT * FROM m_guarantor WHERE id = 48;
-SELECT * FROM m_guarantor_funding_details WHERE guarantor_id = 48;
+SELECT * FROM m_guarantor WHERE id = 366;
+SELECT * FROM m_guarantor_funding_details WHERE guarantor_id = 319;
 SELECT * FROM m_guarantor_transaction WHERE guarantor_fund_detail_id IN (
-    SELECT id FROM m_guarantor_funding_details WHERE guarantor_id = 48
+    SELECT id FROM m_guarantor_funding_details WHERE guarantor_id = 200
 );
 
 SELECT `id`, 
@@ -132,3 +136,22 @@ SELECT * FROM m_product_loan;
 SELECT * FROM m_product_loan_guarantee_details;
 
 SELECT * FROM m_product_loan_charge;
+
+SELECT * FROM m_loan;
+SELECT * FROM m_working_days;
+SELECT * FROM m_holiday;
+SELECT * FROM m_payment_detail;
+
+SELECT * FROM m_savings_account;
+
+SELECT * FROM m_loan_transaction;
+SELECT * FROM m_loan_transaction_relation;
+SELECT * FROM m_loan_transaction_repayment_schedule_mapping;
+
+SELECT * FROM m_loan_tranche_charges;
+
+SELECT * FROM c_configuration; -- reschedule-repayments-on-holidays -- enable-auto-generated-external-id
+
+SELECT * FROM c_configuration WHERE name IN('enable-auto-generated-external-id');
+
+SELECT * FROM m_appuser;
