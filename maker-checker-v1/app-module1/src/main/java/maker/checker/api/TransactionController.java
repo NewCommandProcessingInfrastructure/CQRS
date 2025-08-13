@@ -1,5 +1,6 @@
 package maker.checker.api;
 
+import maker.checker.data.CommonDTO;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import maker.checker.data.CreateTransactionRequest;
@@ -24,6 +25,8 @@ public class TransactionController {
   @PostMapping(path = "/transactions", version = "1")
   public ResponseEntity<Transaction> createv1(@Valid @RequestBody CreateTransactionRequest req,
                                             Authentication auth){
+    CommonDTO dto = new CommonDTO();
+
     return ResponseEntity.status(HttpStatus.OK).body(service.create(req, auth));
   }
 
