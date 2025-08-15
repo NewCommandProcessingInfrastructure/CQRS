@@ -1,13 +1,12 @@
 package com.java.jooq.api.repository;
 
-import com.java.jooq.data.UserDTO;
+import static com.java.jooq.generated.tables.UserTable.USER_TABLE;
+
 import com.java.jooq.entity.UserData;
 import com.java.jooq.generated.tables.records.UserTableRecord;
 import lombok.RequiredArgsConstructor;
 import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
-
-import static com.java.jooq.generated.tables.UserTable.USER_TABLE;
 
 @Repository
 @RequiredArgsConstructor
