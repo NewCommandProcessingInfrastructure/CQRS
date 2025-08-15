@@ -1,4 +1,4 @@
-package com.java.jooq.api.repository;
+package com.java.jooq.repository;
 
 import static com.java.jooq.generated.tables.UserTable.USER_TABLE;
 

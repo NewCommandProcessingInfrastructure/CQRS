@@ -1,6 +1,6 @@
 package com.java.jooq.api;
 
-import com.java.jooq.api.service.UserService;
+import com.java.jooq.service.UserService;
 import com.java.jooq.data.UserDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

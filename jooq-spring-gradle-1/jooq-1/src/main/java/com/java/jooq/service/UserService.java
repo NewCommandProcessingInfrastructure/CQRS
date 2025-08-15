@@ -1,4 +1,4 @@
-package com.java.jooq.api.service;
+package com.java.jooq.service;
 
 import com.java.jooq.data.UserDTO;
 

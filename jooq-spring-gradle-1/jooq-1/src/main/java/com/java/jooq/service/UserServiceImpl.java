@@ -1,6 +1,6 @@
-package com.java.jooq.api.service;
+package com.java.jooq.service;
 
-import com.java.jooq.api.repository.UserRepository;
+import com.java.jooq.repository.UserRepository;
 import com.java.jooq.data.UserDTO;
 import com.java.jooq.entity.UserData;
 import lombok.RequiredArgsConstructor;
