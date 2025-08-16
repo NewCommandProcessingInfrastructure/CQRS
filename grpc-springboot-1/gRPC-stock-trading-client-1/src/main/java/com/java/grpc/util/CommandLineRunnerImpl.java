@@ -14,6 +14,7 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
   @Override
   public void run(String... args) throws Exception {
 //    System.out.println("Response: " + (stockClientService.getStockPrice("GOOGL")));
-    stockClientService.subscribeStockPrice("GOOGL");
+//    stockClientService.subscribeStockPrice("GOOGL");
+    stockClientService.placeBulkOrder();
   }
 }

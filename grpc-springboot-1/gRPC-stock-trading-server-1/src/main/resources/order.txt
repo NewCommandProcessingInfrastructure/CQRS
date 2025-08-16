@@ -1,0 +1,4 @@
+{"order_id":"1", "order_type":"BUY", "price":"500", "quantity":"2", "stock_symbol":"GOOGL"}
+{"order_id":"2", "order_type":"SELL", "price":"1000", "quantity":"1", "stock_symbol":"AMZN"}
+{"order_id":"3", "order_type":"BUY", "price":"120", "quantity":"10", "stock_symbol":"AAPL"}
+{"order_id":"4", "order_type":"BUY", "price":"1500", "quantity":"5", "stock_symbol":"GOOGL"}
