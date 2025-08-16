@@ -3,10 +3,9 @@ package com.java.grpc.util;
 import com.java.grpc.service.StockClientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
-@Configuration
+@Component
 @RequiredArgsConstructor
 public class CommandLineRunnerImpl implements CommandLineRunner {
 
@@ -14,6 +13,7 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    System.out.println("Response: " + (stockClientService.getStockPrice("GOOGL")));
+//    System.out.println("Response: " + (stockClientService.getStockPrice("GOOGL")));
+    stockClientService.subscribeStockPrice("GOOGL");
   }
 }
