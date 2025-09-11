@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS users_table_additional (
+id INT PRIMARY KEY AUTO_INCREMENT,
+email VARCHAR(255),
+password VARCHAR(255),
+created_at TIMESTAMP
+)
