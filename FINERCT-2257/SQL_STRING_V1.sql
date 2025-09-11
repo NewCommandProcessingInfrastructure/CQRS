@@ -52,18 +52,21 @@ SELECT * FROM m_portfolio_account_associations;
 SELECT * FROM m_code_value;
 
 SELECT * FROM m_client;
+SELECT * FROM m_client WHERE id IS NULL;
+SELECT * FROM m_client WHERE mobile_no IN (123456789);
+SELECT * FROM m_client WHERE external_id = '123';
 
 SELECT * FROM m_guarantor;
 SELECT * FROM m_guarantor_funding_details;
 SELECT * FROM m_guarantor_transaction;
 
 SELECT * FROM m_loan;
-SELECT * FROM m_loan WHERE id=4236;
+SELECT * FROM m_loan WHERE id=4208;
 SELECT * FROM m_loan_transaction;
 SELECT * FROM m_loan WHERE external_id="e001aa31-5d8f-4b2e-892a-87add0abf348";
 SELECT * FROM m_portfolio_account_associations;
 
-SELECT * FROM m_guarantor WHERE id = 366;
+SELECT * FROM m_guarantor WHERE id = 387;
 SELECT * FROM m_guarantor_funding_details WHERE guarantor_id = 319;
 SELECT * FROM m_guarantor_transaction WHERE guarantor_fund_detail_id IN (
     SELECT id FROM m_guarantor_funding_details WHERE guarantor_id = 200
@@ -155,3 +158,19 @@ SELECT * FROM c_configuration; -- reschedule-repayments-on-holidays -- enable-au
 SELECT * FROM c_configuration WHERE name IN('enable-auto-generated-external-id');
 
 SELECT * FROM m_appuser;
+
+
+-- -------------------------------
+
+create table users(username varchar(50) not null primary key,password varchar(500) not null,enabled boolean not null);
+create table authorities (username varchar(50) not null,authority varchar(50) not null,constraint fk_authorities_users foreign key(username) references users(username));
+create unique index ix_auth_username on authorities (username,authority);
+
+SELECT * FROM users;
+SELECT * FROM authorities;
+
+INSERT IGNORE INTO `users` VALUES ('user', '{noop}user', '1');
+INSERT IGNORE INTO `authorities` VALUES ('user', 'read');
+
+INSERT IGNORE INTO `users` VALUES ('admin', '{noop}admin', '1');
+INSERT IGNORE INTO `authorities` VALUES ('admin', 'admin');

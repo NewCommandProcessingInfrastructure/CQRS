@@ -5,6 +5,7 @@ import com.java.stock.generated.StockOrder;
 import com.java.stock.generated.StockRequest;
 import com.java.stock.generated.StockResponse;
 import com.java.stock.generated.StockTradingServiceGrpc;
+import com.java.stock.generated.TradeStatus;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.client.inject.GrpcClient;
 import org.springframework.stereotype.Service;
@@ -106,5 +107,39 @@ public class StockClientService {
     } catch (Exception e) {
       requestObserver.onError(e);
     }
+  }
+
+  public void startLiveTrading() throws InterruptedException {
+    StreamObserver<StockOrder> requestObserver =
+            stockTradingServiceStub.liveTrading(new StreamObserver<>() {
+      @Override
+      public void onNext(TradeStatus tradeStatus) {
+        System.out.println("Server Response: " + tradeStatus);
+      }
+
+      @Override
+      public void onError(Throwable throwable) {
+        System.out.println("Error: " + throwable.getMessage());
+      }
+
+      @Override
+      public void onCompleted() {
+        System.out.println("Completed!");
+      }
+    });
+
+    // Sending multiple order requests from client
+    for(int i=1; i<10; i++){
+      StockOrder order = StockOrder.newBuilder()
+              .setOrderId("ORDER_" + i)
+              .setStockSymbol("AAPL")
+              .setQuantity(i*10)
+              .setPrice(i+150)
+              .setOrderType("BUY")
+              .build();
+      requestObserver.onNext(order);
+      Thread.sleep(500);
+    }
+    requestObserver.onCompleted();
   }
 }
