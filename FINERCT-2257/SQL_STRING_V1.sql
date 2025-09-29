@@ -1,3 +1,5 @@
+SELECT * FROM m_portfolio_command_source;
+
 select g.id as id, 
 g.loan_id as loanId, 
 g.client_reln_cv_id as clientRelationshipTypeId, 
@@ -57,6 +59,7 @@ SELECT * FROM m_client WHERE mobile_no IN (123456789);
 SELECT * FROM m_client WHERE external_id = '123';
 
 SELECT * FROM m_guarantor;
+SELECT * FROM m_import_document;
 SELECT * FROM m_guarantor_funding_details;
 SELECT * FROM m_guarantor_transaction;
 
@@ -174,3 +177,11 @@ INSERT IGNORE INTO `authorities` VALUES ('user', 'read');
 
 INSERT IGNORE INTO `users` VALUES ('admin', '{noop}admin', '1');
 INSERT IGNORE INTO `authorities` VALUES ('admin', 'admin');
+
+SELECT * FROM DATABASECHANGELOG WHERE id LIKE 'command-%';
+
+SHOW TABLES LIKE 'm_command';
+
+SELECT * FROM command;
+
+SELECT * FROM m_command;
