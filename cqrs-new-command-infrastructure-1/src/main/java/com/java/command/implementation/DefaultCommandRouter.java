@@ -26,7 +26,6 @@ public class DefaultCommandRouter implements CommandRouter {
 		return (CommandHandler<REQ, RES>) commandHandlers
         .stream()
         .filter(handler -> handler.matches(command))
-        .peek(element -> System.out.println("Element: " + element))
         .findFirst()
         .orElseThrow(() -> new RuntimeException(command.getId().toString()));
 	}

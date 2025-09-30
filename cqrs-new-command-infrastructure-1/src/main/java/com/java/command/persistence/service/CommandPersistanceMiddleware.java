@@ -24,12 +24,8 @@ public class CommandPersistanceMiddleware implements CommandMiddleware {
 		if(command == null) {
 			log.info("Received Null command, skipping persistance");
 		}
-		
+
 		log.info("Inside CommandPersistanceMiddleware - invoke");
-		
-		if(commandRepository.existsByCommandId(command.getId())) {
-			return;
-		}
 
 		try {
 			JsonNode payloadJson = commandJsonMapper.map(command.getPayload());
@@ -42,7 +38,6 @@ public class CommandPersistanceMiddleware implements CommandMiddleware {
 			commandRepository.save(entity);
 
 			log.info("Inside CommandPersistanceMiddleware - after database Save");
-			
 //			log.info("Persisted command: {} with payload type: {} to m_command.", command.getId(), command.getPayload() != null  ? command.getPayload().getClass().getSimpleName() : "null");
 		} catch (Exception e) {
 			log.error("Failed to persist command, {}", command.getId(), e);

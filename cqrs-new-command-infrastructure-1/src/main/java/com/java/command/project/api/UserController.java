@@ -33,6 +33,6 @@ public class UserController {
 		final Supplier<UserResponse> response = pipeline.send(command);
 		UserResponse userResponse = response.get();
 		log.info("Inside UserController - userResponse");
-		return response.get();
+		return userResponse;
 	}
 }

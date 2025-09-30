@@ -35,7 +35,7 @@ public class CommandConfiguration {
 			log.info("Inside CommandConfiguration - waitStrategy");
       return new YieldingWaitStrategy();
   }
-	
+
 	Disruptor<?> disruptor (CommandProperties properties, WaitStrategy waitStrategy, List<CommandMiddleware> middlewares, CommandRouter router) {
 		Disruptor<DisruptorCommandExecutor.CommandEvent> disruptor = 
 				new Disruptor<>(DisruptorCommandExecutor.CommandEvent::new, 
@@ -43,13 +43,13 @@ public class CommandConfiguration {
 						DaemonThreadFactory.INSTANCE,
 						properties.getProducerType(),
 						waitStrategy);
-		
+
 		log.info("Inside CommandConfiguration - disruptor");
-		
+
 		disruptor.handleEventsWith(new DisruptorCommandExecutor.CompletableCommandEventHandler(middlewares, router));
 		disruptor.setDefaultExceptionHandler(new IgnoreExceptionHandler());
 		disruptor.start();
-		
+
 		return disruptor;
 	}
 }
