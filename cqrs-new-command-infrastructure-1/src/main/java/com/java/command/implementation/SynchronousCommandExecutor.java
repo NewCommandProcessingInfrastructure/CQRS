@@ -23,9 +23,9 @@ public class SynchronousCommandExecutor implements CommandExecutor {
 
 	@Override
 	public <REQ, RES> Supplier<RES> execute(Command<REQ> command) {
-		log.info("Inside SynchronousCommandExecutor - Execute");
+//		log.info("Inside SynchronousCommandExecutor - Execute");
 		for(CommandMiddleware middleware: middlewares) {
-			log.info("Inside Middleware Loop: {}", middleware);
+//			log.info("Inside Middleware Loop");
 			middleware.invoke(command);
 		}
 

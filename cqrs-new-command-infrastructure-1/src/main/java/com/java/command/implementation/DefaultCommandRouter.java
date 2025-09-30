@@ -22,7 +22,7 @@ public class DefaultCommandRouter implements CommandRouter {
 		if(command == null) {
 			throw new RuntimeException("Command Handler Not Found");
 		}
-		log.info("Inside DefaultCommandRouter - route");
+//		log.info("Inside DefaultCommandRouter - route");
 		return (CommandHandler<REQ, RES>) commandHandlers
         .stream()
         .filter(handler -> handler.matches(command))
