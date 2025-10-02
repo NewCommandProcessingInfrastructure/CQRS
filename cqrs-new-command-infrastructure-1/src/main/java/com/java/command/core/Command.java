@@ -13,7 +13,7 @@ public class Command<T> implements Serializable {
 
 	@Serial
 	private static final long serialVersionUID = 1L;
-	
+
 	private UUID id;
 	private String idempotencyKey;
 	private OffsetDateTime createdAt;
