@@ -25,13 +25,13 @@ public class UserEntityServiceImpl implements UserEntityService {
 
 	@Override
 	public UserResponse addUserToDatabase(UserRequest payload) {
-		log.info("Inside UserEntityServiceImpl - payload");
+//		log.info("Inside UserEntityServiceImpl - payload");
 		UserEntity entity = mapper.toEntity(payload);
-		log.info("Inside UserEntityServiceImpl - after entity mapping");
+//		log.info("Inside UserEntityServiceImpl - after entity mapping");
 		UserEntity entityResponse = repository.save(entity);
-		log.info("Inside UserEntityServiceImpl - after database save");
+//		log.info("Inside UserEntityServiceImpl - after database save");
 		UserResponse response = mapper.toResponse(entityResponse);
-		log.info("Inside UserEntityServiceImpl - after response mapping");
+//		log.info("Inside UserEntityServiceImpl - after response mapping");
 		return response;
 	}
 }

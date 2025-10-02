@@ -30,12 +30,14 @@ public class CommandConfiguration {
 
 	@Bean
   @ConditionalOnMissingBean
-  @ConditionalOnProperty(value = "java.command.executor", havingValue = "disruptor")
+  @ConditionalOnProperty(value = "helloworld.command.executor", havingValue = "disruptor")
   WaitStrategy waitStrategy() {
-			log.info("Inside CommandConfiguration - waitStrategy");
+//			log.info("Inside CommandConfiguration - waitStrategy");
       return new YieldingWaitStrategy();
   }
 
+	@Bean
+  @ConditionalOnProperty(value = "helloworld.command.executor", havingValue = "disruptor")
 	Disruptor<?> disruptor (CommandProperties properties, WaitStrategy waitStrategy, List<CommandMiddleware> middlewares, CommandRouter router) {
 		Disruptor<DisruptorCommandExecutor.CommandEvent> disruptor = 
 				new Disruptor<>(DisruptorCommandExecutor.CommandEvent::new, 

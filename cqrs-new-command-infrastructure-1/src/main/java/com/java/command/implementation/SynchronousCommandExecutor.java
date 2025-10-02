@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @RequiredArgsConstructor
 @Component
-@ConditionalOnProperty(value = "java.command.executor", havingValue = "sync")
+@ConditionalOnProperty(value = "helloworld.command.executor", havingValue = "sync")
 public class SynchronousCommandExecutor implements CommandExecutor {
 
 	private final List<CommandMiddleware> middlewares;

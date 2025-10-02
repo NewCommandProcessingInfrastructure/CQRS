@@ -21,7 +21,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @RequiredArgsConstructor
 @Component
-@ConditionalOnProperty(value = "java.command.executor", havingValue = "disruptor")
+@ConditionalOnProperty(value = "helloworld.command.executor", havingValue = "disruptor")
 public class DisruptorCommandExecutor implements CommandExecutor, Closeable {
 
 	private final Disruptor<CommandEvent> disruptor;

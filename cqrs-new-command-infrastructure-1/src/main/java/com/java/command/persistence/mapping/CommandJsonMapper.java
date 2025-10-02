@@ -18,7 +18,7 @@ public class CommandJsonMapper {
 	
 	public <T> T map(JsonNode source) {
 		
-		log.info("Inside CommandJsonMapper - T map");
+//		log.info("Inside CommandJsonMapper - T map");
 		
 		if(source == null) {
 			return null;
@@ -38,7 +38,7 @@ public class CommandJsonMapper {
 		if(source == null) {
 			return null;
 		}
-		log.info("Inside CommandJsonMapper - JsonNode Map");
+//		log.info("Inside CommandJsonMapper - JsonNode Map");
 		var json = mapper.convertValue(source, ObjectNode.class);
 		json.set(CLASS_ATTRIBUTE, new TextNode(source.getClass().getCanonicalName()));
 		return json;
