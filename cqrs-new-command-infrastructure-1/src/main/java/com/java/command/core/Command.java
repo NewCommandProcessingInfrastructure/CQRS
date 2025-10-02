@@ -9,7 +9,7 @@ import lombok.experimental.FieldNameConstants;
 
 @Data
 @FieldNameConstants
-public class Command<T> implements Serializable{
+public class Command<T> implements Serializable {
 
 	@Serial
 	private static final long serialVersionUID = 1L;
