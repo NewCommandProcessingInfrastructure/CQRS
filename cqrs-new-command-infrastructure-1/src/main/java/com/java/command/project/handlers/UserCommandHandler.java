@@ -18,7 +18,7 @@ public class UserCommandHandler implements CommandHandler<UserRequest, UserRespo
 
 	@Override
 	public UserResponse handle(Command<UserRequest> command) {
-//		log.info("Inside UserCommandHandler - handle");
+		log.info("Inside UserCommandHandler - handle");
 		return service.addUserToDatabase(command.getPayload());
 	}
 }

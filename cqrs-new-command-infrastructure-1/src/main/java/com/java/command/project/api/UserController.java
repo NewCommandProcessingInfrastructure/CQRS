@@ -29,10 +29,10 @@ public class UserController {
 		command.setId(UUID.randomUUID());
 		command.setCreatedAt(OffsetDateTime.now());
 		command.setPayload(request);
-//		log.info("Inside UserController - postMethodName");
+		log.info("Inside UserController - postMethodName");
 		final Supplier<UserResponse> response = pipeline.send(command);
 		UserResponse userResponse = response.get();
-//		log.info("Inside UserController - userResponse");
+		log.info("Inside UserController - userResponse");
 		return userResponse;
 	}
 }

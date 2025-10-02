@@ -32,7 +32,7 @@ public class CommandConfiguration {
   @ConditionalOnMissingBean
   @ConditionalOnProperty(value = "helloworld.command.executor", havingValue = "disruptor")
   WaitStrategy waitStrategy() {
-//			log.info("Inside CommandConfiguration - waitStrategy");
+			log.info("Inside CommandConfiguration - waitStrategy");
       return new YieldingWaitStrategy();
   }
 

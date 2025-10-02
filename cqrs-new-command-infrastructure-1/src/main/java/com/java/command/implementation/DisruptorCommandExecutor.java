@@ -44,7 +44,6 @@ public class DisruptorCommandExecutor implements CommandExecutor, Closeable {
 		var sequenceId = ringBuffer.next();
 
 		log.info("Inside DisruptorCommandExecutore - Next");
-
 		CommandEvent<REQ, RES> event = ringBuffer.get(sequenceId);
 		event.setCommand(command);
 		ringBuffer.publish(sequenceId);

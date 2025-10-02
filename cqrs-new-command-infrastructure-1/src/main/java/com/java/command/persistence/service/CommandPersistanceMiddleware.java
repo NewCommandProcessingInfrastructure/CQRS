@@ -8,10 +8,13 @@ import com.java.command.persistence.domain.CommandRepository;
 import com.java.command.persistence.mapping.CommandJsonMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Slf4j
 @RequiredArgsConstructor
+@Order(value = 2)
 @Component
 public class CommandPersistanceMiddleware implements CommandMiddleware {
 
@@ -25,7 +28,7 @@ public class CommandPersistanceMiddleware implements CommandMiddleware {
 			log.info("Received Null command, skipping persistance");
 		}
 
-//		log.info("Inside CommandPersistanceMiddleware - invoke");
+		log.info("Inside CommandPersistanceMiddleware - invoke");
 
 		try {
 			JsonNode payloadJson = commandJsonMapper.map(command.getPayload());
@@ -37,7 +40,7 @@ public class CommandPersistanceMiddleware implements CommandMiddleware {
 
 			commandRepository.save(entity);
 
-//			log.info("Inside CommandPersistanceMiddleware - after database Save");
+			log.info("Inside CommandPersistanceMiddleware - after database Save");
 //			log.info("Persisted command: {} with payload type: {} to m_command.", command.getId(), command.getPayload() != null  ? command.getPayload().getClass().getSimpleName() : "null");
 		} catch (Exception e) {
 			log.error("Failed to persist command, {}", command.getId(), e);

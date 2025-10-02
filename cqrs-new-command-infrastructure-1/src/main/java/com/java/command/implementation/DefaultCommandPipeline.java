@@ -21,7 +21,7 @@ public class DefaultCommandPipeline implements CommandPipeline {
 	@Override
 	public <REQ, RES> Supplier<RES> send(Command<REQ> command) {
 		Objects.requireNonNull(command, "Command must not be null.");
-//		log.info("Inside DefaultCommandPipeline - send");
+		log.info("Inside DefaultCommandPipeline - send");
 		return executor.execute(command);
 	}
 }
