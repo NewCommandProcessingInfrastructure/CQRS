@@ -35,7 +35,6 @@ public class CommandPersistanceMiddleware implements CommandMiddleware {
       entity.setCreatedAt(command.getCreatedAt());
 
       commandRepository.save(entity);
-
     } catch (Exception e) {
       throw new RuntimeException(e.getMessage());
     }
