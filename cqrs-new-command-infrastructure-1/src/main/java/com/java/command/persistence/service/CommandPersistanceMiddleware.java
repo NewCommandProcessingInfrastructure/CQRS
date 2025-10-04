@@ -26,6 +26,7 @@ public class CommandPersistanceMiddleware implements CommandMiddleware {
 
 		if(command == null) {
 			log.info("Received Null command, skipping persistance");
+			return;
 		}
 
 		log.info("Inside CommandPersistanceMiddleware - invoke");
