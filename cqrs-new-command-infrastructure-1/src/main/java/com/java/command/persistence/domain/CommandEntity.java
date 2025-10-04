@@ -40,6 +40,7 @@ public class CommandEntity implements Serializable {
 	@Column(name = "id")
 	private Long id;
 
+	@Builder.Default
 	@Transient
 	@Setter(value = AccessLevel.NONE)
 	private boolean isNew = true;
