@@ -3,6 +3,7 @@ package com.java.workflow.infrastructure.starter;
 import com.java.workflow.infrastructure.core.CommandMiddleware;
 import com.java.workflow.infrastructure.core.CommandProperties;
 import com.java.workflow.infrastructure.core.CommandRouter;
+import com.java.workflow.infrastructure.implementation.DisruptorCommandExecutor;
 import com.lmax.disruptor.IgnoreExceptionHandler;
 import com.lmax.disruptor.WaitStrategy;
 import com.lmax.disruptor.YieldingWaitStrategy;
