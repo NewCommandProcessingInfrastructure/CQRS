@@ -1,6 +1,6 @@
 # New Command Processing Infrastructure
 
-1) Replicated the same logic from fineract-command
+1) Replicated the same logic from fineract-command (NewCommandProcessingInfrastructure).
 2) Added CommandPostProcessor to the pipeline for postprocessing the command updation request. Similar to existing logic:
 
 ### package org.apache.fineract.commands.service.SynchronousCommandProcessingService
