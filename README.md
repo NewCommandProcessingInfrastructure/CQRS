@@ -1,7 +1,9 @@
 # New Command Processing Infrastructure
 
 1) Replicated the same logic from fineract-command
-2) Added CommandPostProcessor to the pipeline for postprocessing the command updation request. Similar to existing logic
+2) Added CommandPostProcessor to the pipeline for postprocessing the command updation request. Similar to existing logic:
+
+### package org.apache.fineract.commands.service.SynchronousCommandProcessingService
 
 ```java
 private CommandProcessingResult executeCommand(final CommandWrapper wrapper, final JsonCommand command,
