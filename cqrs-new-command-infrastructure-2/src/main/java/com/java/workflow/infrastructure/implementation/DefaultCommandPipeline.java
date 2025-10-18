@@ -3,7 +3,7 @@ package com.java.workflow.infrastructure.implementation;
 import com.java.workflow.infrastructure.core.Command;
 import com.java.workflow.infrastructure.core.CommandExecutor;
 import com.java.workflow.infrastructure.core.CommandPipeline;
-import com.java.workflow.infrastructure.core.CommandPostProcess;
+import com.java.workflow.infrastructure.core.CommandPostProcessor;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Supplier;
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 @ConditionalOnBean(CommandPipeline.class)
 public class DefaultCommandPipeline implements CommandPipeline {
   private final CommandExecutor executor;
-  private final List<CommandPostProcess> postProcesses;
+  private final List<CommandPostProcessor<?>> postProcesses;
 
   @Override
   public <REQ, RES> Supplier<RES> send(Command<REQ> command) {
@@ -38,9 +38,11 @@ public class DefaultCommandPipeline implements CommandPipeline {
       } catch (Throwable ex) {
         exception = ex;
       }
+
       // Execute post-processing with both result and exception
-      for(CommandPostProcess postProcess : postProcesses) {
-        postProcess.run();
+      for(CommandPostProcessor<?> postProcess : postProcesses) {
+        CommandPostProcessor<REQ> typedProcessor = (CommandPostProcessor<REQ>) postProcess;
+        typedProcessor.run(command);
       }
 
       // If exception occurred, propagate it

@@ -4,10 +4,12 @@ import java.io.Serial;
 import java.io.Serializable;
 import java.time.OffsetDateTime;
 import java.util.UUID;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.FieldNameConstants;
 
-@Data
+@Getter
+@Setter
 @FieldNameConstants
 public class Command<T> implements Serializable {
 
@@ -16,7 +18,9 @@ public class Command<T> implements Serializable {
 
   private UUID id;
   private String idempotencyKey;
+  private String status;
   private OffsetDateTime createdAt;
+  private OffsetDateTime updatedAt;
   private String tenantId;
   private String username;
   private T payload;

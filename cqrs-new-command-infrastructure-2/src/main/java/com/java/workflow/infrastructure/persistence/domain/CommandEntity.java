@@ -51,11 +51,18 @@ public class CommandEntity implements Serializable {
   @Column(name = "created_at")
   private OffsetDateTime createdAt;
 
+  @Column(name = "updated_at")
+  private OffsetDateTime updatedAt;
+
   @Column(name = "tenant_id")
   private String tenantId;
 
   @Column(name = "username")
   private String username;
+
+  @Builder.Default
+  @Column(name = "status")
+  private String status = "INIT";
 
   @Column(name = "payload")
   @Convert(converter = JsonAttributeConverter.class)
