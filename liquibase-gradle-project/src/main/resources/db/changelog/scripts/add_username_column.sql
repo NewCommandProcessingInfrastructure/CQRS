@@ -1,1 +1,0 @@
-ALTER TABLE users_table_additional ADD COLUMN username VARCHAR(10);

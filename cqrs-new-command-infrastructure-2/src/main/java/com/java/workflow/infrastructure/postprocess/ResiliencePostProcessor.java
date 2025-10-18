@@ -27,6 +27,8 @@ public class ResiliencePostProcessor<T> implements CommandPostProcessor<T> {
   @Retry(name = "run", fallbackMethod = "updateCommandStatusFallback")
   @Override
   public void run(Command<T> command) {
+
+    /** Simulates the database error event */
 //    log.info("Inside Command PostProcess for Resilience 4J");
 //    CommandEntity commandEntity = repository.findByCommandId(command.getId());
 //    log.info("CommandEntity, {}", commandEntity);
