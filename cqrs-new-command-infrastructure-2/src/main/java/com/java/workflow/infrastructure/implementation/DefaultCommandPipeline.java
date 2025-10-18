@@ -31,7 +31,6 @@ public class DefaultCommandPipeline implements CommandPipeline {
     return () -> {
       RES result = null;
       Throwable exception = null;
-
       try {
         // Execute the handler logic
         result = baseSupplier.get();
