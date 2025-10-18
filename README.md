@@ -1,7 +1,8 @@
 # New Command Processing Infrastructure
 
 1) Replicated the same logic from fineract-command (NewCommandProcessingInfrastructure).
-2) Added CommandPostProcessor to the pipeline for postprocessing the command updation request. Similar to existing logic:
+2) Added (simulated database error) to see the retry mechanism for failure.
+3) Added CommandPostProcessor to the pipeline for postprocessing the command updation request. Similar to existing logic:
 
 ### package org.apache.fineract.commands.service.SynchronousCommandProcessingService
 
