@@ -1,4 +1,5 @@
-title: 'Extensible Orchestrated Interceptor Workflows for High-Performance Processing'
+---
+title: "Extensible Orchestrated Interceptor Workflows for High-Performance Processing"
 tags:
   - Java
   - cqrs
@@ -6,12 +7,13 @@ tags:
   - database logging
   - persistence
 authors:
-  - name: Kapil Panchal
-    affiliation: "1"
+  - name: "Kapil Panchal"
+    affiliation: 1
 affiliations:
-  - name: Independent Researcher
-   index: 1
-date: December 2025
+  - index: 1
+    name: "Independent Researcher"
+date: "2025-12"
+---
 
 # Introduction
 
