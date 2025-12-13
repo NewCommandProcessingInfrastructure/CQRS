@@ -1,3 +1,18 @@
+title: 'Extensible Orchestrated Interceptor Workflows for High-Performance Processing'
+tags:
+  - Java
+  - cqrs
+  - pipelines
+  - database logging
+  - persistence
+authors:
+  - name: Kapil Panchal
+    affiliation: "1"
+affiliations:
+  - name: Independent Researcher
+   index: 1
+date: December 2025
+
 # Introduction
 
 In modern enterprise systems, the complexity of command processing often
