@@ -191,68 +191,6 @@ commands are processed in a consistent and predictable manner,
 facilitating the design of resilient systems \[@Schagaev\] that can
 gracefully handle transient failures and maintain system stability.
 
-## Related Frameworks and Implementations
-
-Several frameworks and implementations have explored the integration of
-CQRS, EDA, and interceptor patterns to build scalable and maintainable
-systems:
-
-Axon Framework: A Java framework that supports the development of
-event-driven, CQRS-based applications, providing infrastructure for
-event sourcing, aggregates, and sagas \[@Christudas\].
-
-Spring Cloud Stream: A framework for building event-driven microservices
-with Spring Boot, offering abstractions and support for integrating with
-message brokers \[@Webb\].
-
-Triggerflow: An extensible trigger-based orchestration architecture for
-serverless workflows, capable of constructing various reactive
-schedulers and supporting high-volume event processing workloads
-\[@Lopez\].
-
-Apache Camel: An integration framework that provides a rule-based
-routing and mediation engine, supporting numerous protocols and data
-formats. It allows the construction of complex, event-driven workflows
-using Enterprise Integration Patterns (EIPs) \[@Gosewehr\].
-
-Apache Fineract is an open-source, cloud-ready core banking platform
-developed under the Apache Software Foundation. Designed to support
-digital financial services, it offers scalable and secure solutions for
-managing client data, loans, savings, and accounting operations. With a
-modular architecture and comprehensive RESTful APIs, Fineract enables
-financial institutions to deliver inclusive and customizable banking
-services, fostering financial inclusion worldwide \[@Fineract\].
-
-These frameworks demonstrate the practical application of combining
-CQRS, EDA, and interceptor patterns to build robust and scalable
-systems. However, they often focus on specific aspects of the
-architecture and may not provide a comprehensive solution that
-integrates all these elements seamlessly.
-
-## Research Gaps and Opportunities
-
-While existing research and frameworks have addressed various aspects of
-command processing in distributed systems, several gaps remain:
-
-Composability and Extensibility: Many existing solutions lack the
-flexibility to dynamically compose and extend command processing
-pipelines without significant refactoring.
-
-Deterministic Execution: Achieving predictable latency and deterministic
-execution in high-throughput systems remains a challenging problem.
-
-Separation of Concerns: Effectively decoupling operational concerns from
-business logic without introducing excessive complexity is an ongoing
-challenge.
-
-The proposed Extensible Orchestrated Interceptor Workflows (EOIW)
-framework aims to address these gaps by providing a composable,
-maintainable, and resilient architecture for command processing
-pipelines. By integrating classical design patterns with modern
-declarative and functional paradigms, EOIW seeks to achieve a balance
-between performance and maintainability, facilitating the development of
-high-performance, enterprise-grade systems.
-
 # Functional Composition of the Command Pipeline
 
 ## Formal Definitions
