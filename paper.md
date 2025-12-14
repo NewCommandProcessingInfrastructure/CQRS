@@ -865,7 +865,7 @@ deterministic processing \[@Vukotic\] simplifies error handling and
 concurrency management, even when executed in a synchronous pipeline.
 \[@Doberkat\]
 
-This architectural philosophy \[@Richards\] resonates with the
+This architectural philosophy \[@MarkRichards\] resonates with the
 command-side of CQRS: operations can be orchestrated through a
 synchronous pipeline where middleware, handlers, and post-processors
 interact deterministically and efficiently, without being tightly
@@ -940,7 +940,7 @@ queues provides:
 
 EOIW leverages these mechanisms to orchestrate commands efficiently,
 ensuring that high volumes of requests are processed without bottlenecks
-\[@Thompson2011disruptor\].
+\[@Thompson\].
 
 ## Standardized Command Execution
 
